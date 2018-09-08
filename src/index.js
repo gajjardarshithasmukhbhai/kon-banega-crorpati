@@ -48,12 +48,18 @@ constructor()
 	this.click=this.click.bind(this);
 	this.clickme=this.clickme.bind(this);
 	this.dummyanswer=this.dummyanswer.bind(this);
+	this.answer=this.answer.bind(this);
 	this.answer2=this.answer2.bind(this);
 	this.answer3=this.answer3.bind(this);
 	this.answer4=this.answer4.bind(this);
 	this.answer5=this.answer5.bind(this);
 	this.answer6=this.answer6.bind(this);
-
+	this.answer7=this.answer7.bind(this);
+	this.answer8=this.answer8.bind(this);
+	this.answer9=this.answer9.bind(this);
+	this.answer10=this.answer10.bind(this);
+	this.answer11=this.answer11.bind(this);
+	this.answer12=this.answer12.bind(this);
 }
 click(enb)
 {
@@ -177,7 +183,7 @@ answer6()
 		})
 	}
 }
-answe7()
+answer7()
 {
 	var answerlkm=this.state.answers;
 	var dummyanswer=this.state.dummyanswer;
@@ -494,7 +500,7 @@ answer12()
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
-								<h1 class="text text-white lk">{this.state.textsubmit}जी आप खेल में हार गये सही जवाब है पश्चिम बंगाल</h1>
+								<h1 class="text text-white lk">{this.state.textsubmit}जी आप खेल में हार गये सही जवाब है David Coulthard</h1>
 							</div>
 			</div>}		
 		}
@@ -540,7 +546,6 @@ answer12()
                                                 <p><i class="fa fa-inr float-left" aria-hidden="true">5,000</i></p>
                                     </ul>	
                                     		<button type="button" class="btn btn-primary" onClick={this.answer}>Lock kiya jaye</button>
-                                            {thirdpage}
                                             </p>
                                     </form>
 								</div>
