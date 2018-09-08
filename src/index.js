@@ -16,8 +16,20 @@ import check9 from './sbi9.png'
 import check10 from './sbi10.png'
 import check11 from './sbi11.png'
 import check12 from './sbi12.png'
+import {BrowserRouter as Router,Route,Link,Redirect} from 'react-router-dom'
 
 import '../node_modules/font-awesome/css/font-awesome.min.css'
+var firebase=require("firebase")
+var uuid=require("uuid")
+var config = {
+    apiKey: "AIzaSyB20eC8AULheFT7QFXScpnrMC5aqk05nuE",
+    authDomain: "cismox-e3ba1.firebaseapp.com",
+    databaseURL: "https://cismox-e3ba1.firebaseio.com",
+    projectId: "cismox-e3ba1",
+    storageBucket: "cismox-e3ba1.appspot.com",
+    messagingSenderId: "238998483800"
+  };
+  firebase.initializeApp(config);
 class Darshit extends React.Component{
 constructor()
 {
@@ -43,7 +55,8 @@ constructor()
 		dummytext:"",
 		dummyanswer:"",
 		answerlkm:"",
-		money:[]
+		money:[],
+		uid:uuid.v1(),
 	}
 	this.click=this.click.bind(this);
 	this.clickme=this.clickme.bind(this);
@@ -100,6 +113,9 @@ answer()
 			money:5000
 		})
 	}
+	firebase.database().ref("cismox/"+this.state.uid).set({
+		name:this.state.textsubmit,
+	})
 
 }
 
@@ -117,6 +133,10 @@ answer2()
 			money:10000
 		})
 	}
+firebase.database().ref("cismox/"+this.state.uid).set({
+		name:this.state.textsubmit,
+	})
+
 
 }
 
@@ -134,6 +154,10 @@ answer3()
 			money:20000
 		})
 	}
+	firebase.database().ref("cismox/"+this.state.uid).set({
+		name:this.state.textsubmit,
+	})
+
 }
 
 answer4()
@@ -150,6 +174,10 @@ answer4()
 			money:40000
 		})
 	}
+	firebase.database().ref("cismox/"+this.state.uid).set({
+		name:this.state.textsubmit,
+	})
+
 }
 
 answer5()
@@ -166,6 +194,10 @@ answer5()
 			money:80000
 		})
 	}
+firebase.database().ref("cismox/"+this.state.uid).set({
+		name:this.state.textsubmit,
+	})
+
 }
 
 answer6()
@@ -182,6 +214,10 @@ answer6()
 			money:160000
 		})
 	}
+firebase.database().ref("cismox/"+this.state.uid).set({
+		name:this.state.textsubmit,
+	})
+
 }
 answer7()
 {
@@ -197,6 +233,10 @@ answer7()
 			money:320000
 		})
 	}
+firebase.database().ref("cismox/"+this.state.uid).set({
+		name:this.state.textsubmit,
+	})
+
 }
 answer8()
 {
@@ -212,6 +252,10 @@ answer8()
 			money:640000
 		})
 	}
+firebase.database().ref("cismox/"+this.state.uid).set({
+		name:this.state.textsubmit,
+	})
+
 }
 answer9()
 {
@@ -227,6 +271,10 @@ answer9()
 			money:1250000
 		})
 	}
+firebase.database().ref("cismox/"+this.state.uid).set({
+		name:this.state.textsubmit,
+	})
+
 }
 answer10()
 {
@@ -242,6 +290,10 @@ answer10()
 			money:2500000
 		})
 	}
+firebase.database().ref("cismox/"+this.state.uid).set({
+		name:this.state.textsubmit,
+	})
+
 }
 answer11()
 {
@@ -257,6 +309,10 @@ answer11()
 			money:5000000
 		})
 	}
+firebase.database().ref("cismox/"+this.state.uid).set({
+		name:this.state.textsubmit,
+	})
+
 }
 answer12()
 {
@@ -272,6 +328,10 @@ answer12()
 			money:10000000
 		})
 	}
+firebase.database().ref("cismox/"+this.state.uid).set({
+		name:this.state.textsubmit,
+	})
+
 }
 	render()
 	{
@@ -323,6 +383,9 @@ answer12()
 								<h1 class="text text-white lk">{this.state.textsubmit}जी Congratulations आपने 5000/- जीता यदि आप अधिक चेक बनाना चाहते हैं तो Back बटन पर क्लिक करें</h1>
 							</div>
 								<p class="cheque">{this.state.textsubmit}</p><img src={check} class="img-fluid"/>
+								<br/><br/>
+								
+								<Link exact to="/kk" class="btn primary">Back</Link>
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
@@ -339,6 +402,8 @@ answer12()
 								<h1 class="text text-white lk">{this.state.textsubmit}जी Congratulations आपने 10,000/- जीता यदि आप अधिक चेक बनाना चाहते हैं तो Back बटन पर क्लिक करें</h1>
 							</div>
 								<p class="cheque">{this.state.textsubmit}</p><img src={check2} class="img-fluid"/>
+								<Link exact to="/kk2" class="btn primary">Back</Link>
+				
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
@@ -355,6 +420,8 @@ answer12()
 								<h1 class="text text-white lk">{this.state.textsubmit}जी Congratulations आपने 20,000/- जीता यदि आप अधिक चेक बनाना चाहते हैं तो Back बटन पर क्लिक करें</h1>
 							</div>
 								<p class="cheque">{this.state.textsubmit}</p><img src={check3} class="img-fluid"/>
+								<Link exact to="/kk3" class="btn primary">Back</Link>
+				
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
@@ -370,6 +437,8 @@ answer12()
 								<h1 class="text text-white lk">{this.state.textsubmit}जी Congratulations आपने 40,000/- जीता यदि आप अधिक चेक बनाना चाहते हैं तो Back बटन पर क्लिक करें</h1>
 							</div>
 								<p class="cheque">{this.state.textsubmit}</p><img src={check4} class="img-fluid"/>
+								<Link exact to="/kk4" class="btn primary">Back</Link>
+				
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
@@ -385,6 +454,8 @@ answer12()
 								<h1 class="text text-white lk">{this.state.textsubmit}जी Congratulations आपने 80,000/- जीता यदि आप अधिक चेक बनाना चाहते हैं तो Back बटन पर क्लिक करें</h1>
 							</div>
 								<p class="cheque">{this.state.textsubmit}</p><img src={check5} class="img-fluid"/>
+								<Link exact to="/kk5" class="btn primary">Back</Link>
+				
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
@@ -400,6 +471,8 @@ answer12()
 								<h1 class="text text-white lk">{this.state.textsubmit}जी Congratulations आपने 1,60,000/- जीता यदि आप अधिक चेक बनाना चाहते हैं तो Back बटन पर क्लिक करें</h1>
 							</div>
 								<p class="cheque">{this.state.textsubmit}</p><img src={check6} class="img-fluid"/>
+								<Link exact to="/kk6" class="btn primary">Back</Link>
+				
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
@@ -416,6 +489,8 @@ answer12()
 								<h1 class="text text-white lk">{this.state.textsubmit}जी Congratulations आपने 3,20,000/- जीता यदि आप अधिक चेक बनाना चाहते हैं तो Back बटन पर क्लिक करें</h1>
 							</div>
 								<p class="cheque">{this.state.textsubmit}</p><img src={check7} class="img-fluid"/>
+								<Link exact to="/kk7" class="btn primary">Back</Link>
+				
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
@@ -432,6 +507,8 @@ answer12()
 								<h1 class="text text-white lk">{this.state.textsubmit}जी Congratulations आपने 6,40,000/- जीता यदि आप अधिक चेक बनाना चाहते हैं तो Back बटन पर क्लिक करें</h1>
 							</div>
 								<p class="cheque">{this.state.textsubmit}</p><img src={check8} class="img-fluid"/>
+								<Link exact to="/kk8" class="btn primary">Back</Link>
+				
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
@@ -448,6 +525,8 @@ answer12()
 								<h1 class="text text-white lk">{this.state.textsubmit}जी Congratulations आपने 12,50,000/- जीता यदि आप अधिक चेक बनाना चाहते हैं तो Back बटन पर क्लिक करें</h1>
 							</div>
 								<p class="cheque">{this.state.textsubmit}</p><img src={check9} class="img-fluid"/>
+								<Link exact to="/kk9" class="btn primary">Back</Link>
+								
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
@@ -464,6 +543,8 @@ answer12()
 								<h1 class="text text-white lk">{this.state.textsubmit}जी Congratulations आपने 25,00,000 जीता यदि आप अधिक चेक बनाना चाहते हैं तो Back बटन पर क्लिक करें</h1>
 							</div>
 								<p class="cheque">{this.state.textsubmit}</p><img src={check10} class="img-fluid"/>
+								<Link exact to="/kk10" class="btn primary">Back</Link>
+				
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
@@ -480,6 +561,8 @@ answer12()
 								<h1 class="text text-white lk">{this.state.textsubmit}जी Congratulations आपने 50,00,000/- जीता यदि आप अधिक चेक बनाना चाहते हैं तो Back बटन पर क्लिक करें</h1>
 							</div>
 								<p class="cheque">{this.state.textsubmit}</p><img src={check11} class="img-fluid"/>
+								<Link exact to="/kk11" class="btn primary">Back</Link>
+				
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
@@ -497,6 +580,8 @@ answer12()
 								<h1 class="text text-white lk">{this.state.textsubmit}जी Congratulations YOU WON 1 CRORE RUPESS</h1>
 							</div>
 								<p class="cheque">{this.state.textsubmit}</p><img src={check12} class="img-fluid"/>
+								<Link exact to="/kk12" class="btn primary">Back</Link>
+				
 				</div>}
 			else{thirdpage=<div>
 				<div class="alert  mnb">
@@ -576,7 +661,7 @@ answer12()
                                                 <li class="list-group-item"><br/>A: असम &nbsp;<input type="radio" name="answer3" value="A" onChange={this.dummyanswer}/></li>
 
                                                 <li class="list-group-item">B: दिल्ली&nbsp;<input type="radio" name="answer3" value="B" onChange={this.dummyanswer}/></li>
-                                                <li class="list-group-item">C: -पोर्टब्लेयर&nbsp;<input type="radio" name="answer3" value="C" onChange={this.dummyanswer}/></li>
+                                                <li class="list-group-item">C: पोर्टब्लेयर&nbsp;<input type="radio" name="answer3" value="C" onChange={this.dummyanswer}/></li>
                                                 <br/>
                                                 <p><i class="fa fa-inr float-left" aria-hidden="true" >20,000</i></p>
                                     </ul>
@@ -591,7 +676,7 @@ answer12()
 									<p class="lead text-center text-capitalize shadow-lg p-4 mb-4 bg-white">
 									<ul class="list-group">
                                                 4) ‘शाहनामा’ किसकी कृति है? 
-                                                <li class="list-group-item"><br/>A: -फिरदौसी&nbsp;<input type="radio" name="answer4" value="A" onChange={this.dummyanswer}/></li>
+                                                <li class="list-group-item"><br/>A: फिरदौसी&nbsp;<input type="radio" name="answer4" value="A" onChange={this.dummyanswer}/></li>
 
                                                 <li class="list-group-item">B: महाकवि कालिदास&nbsp;<input type="radio" name="answer4" value="B" onChange={this.dummyanswer}/></li>
                                                 <li class="list-group-item">C: ख्वाजा मोईनुद्दीन चिस्ती&nbsp;<input type="radio"  value="C" name="answer4" onChange={this.dummyanswer}/></li>
@@ -609,7 +694,7 @@ answer12()
 									<p class="lead text-center text-capitalize shadow-lg p-4 mb-4 bg-white">
 									<ul class="list-group">
                                                 5) रूस में साइबेरिया पूरे विश्व में किस लिए प्रसिद्ध है?
-                                                <li class="list-group-item"><br/>A: -इसकी अत्यधिक ठण्डी जलवायु के लिए&nbsp;<input type="radio" name="answer5" value="A" onChange={this.dummyanswer}/></li>
+                                                <li class="list-group-item"><br/>A: इसकी अत्यधिक ठण्डी जलवायु के लिए&nbsp;<input type="radio" name="answer5" value="A" onChange={this.dummyanswer}/></li>
 
                                                 <li class="list-group-item">B: बीच के लिए&nbsp;<input type="radio" name="answer5" value="B" onChange={this.dummyanswer}/></li>
                                                 <li class="list-group-item">C: इसकी अत्यधिक उष्ण जलवायु के लिए&nbsp;<input type="radio"  value="C" name="answer5" onChange={this.dummyanswer}/></li>
@@ -627,7 +712,7 @@ answer12()
 									<p class="lead text-center text-capitalize shadow-lg p-4 mb-4 bg-white">
 									<ul class="list-group">
                                                 6) भारत के किस राज्य सर्वाधिक चावल उत्पादन होता है 
-                                                <li class="list-group-item"><br/>A: -पश्चिम बंगाल&nbsp;<input type="radio" name="answer6" value="A" onChange={this.dummyanswer}/></li>
+                                                <li class="list-group-item"><br/>A: पश्चिम बंगाल&nbsp;<input type="radio" name="answer6" value="A" onChange={this.dummyanswer}/></li>
 
                                                 <li class="list-group-item">B: दिल्ली&nbsp;<input type="radio" name="answer6" value="B" onChange={this.dummyanswer}/></li>
                                                 <li class="list-group-item">C: असम&nbsp;<input type="radio" name="answer6" value="C" onChange={this.dummyanswer}/></li>
@@ -648,7 +733,7 @@ answer12()
 OPTI 
                                                 <li class="list-group-item"><br/>A: Embroidery&nbsp;<input type="radio" value="A" onChange={this.dummyanswer} name="answer7"/></li>
 
-                                                <li class="list-group-item">B: -Paintings&nbsp;<input type="radio"  value="B" onChange={this.dummyanswer} name="answer7"/></li>
+                                                <li class="list-group-item">B: Paintings&nbsp;<input type="radio"  value="B" onChange={this.dummyanswer} name="answer7"/></li>
                                                 <li class="list-group-item">C: Handicraft&nbsp;<input type="radio" value="C" onChange={this.dummyanswer} name="answer7"/></li>
                                                 <br/>
                                                 <p><i class="fa fa-inr float-left" aria-hidden="true">3,20,000</i></p>
@@ -664,7 +749,7 @@ OPTI
 									<p class="lead text-center text-capitalize shadow-lg p-4 mb-4 bg-white">
 									<ul class="list-group">
                                                 8) पूर्वोत्तर सीमान्त रेलवे का मुख्यालय कहाँ है? 
-                                                <li class="list-group-item"><br/>A: -मालीगांव&nbsp;<input type="radio" value="A" onChange={this.dummyanswer}name="answer8"/></li>
+                                                <li class="list-group-item"><br/>A: मालीगांव&nbsp;<input type="radio" value="A" onChange={this.dummyanswer}name="answer8"/></li>
 
                                                 <li class="list-group-item">B: तिनसुकिया&nbsp;<input type="radio" value="B" onChange={this.dummyanswer}name="answer8"/></li>
                                                 <li class="list-group-item">C: लामडिंग&nbsp;<input type="radio" value="C" onChange={this.dummyanswer} name="answer8"/></li>
@@ -684,7 +769,7 @@ OPTI
                                                 9) दिल्ली की सुल्तान रजिया सुल्तान किसकी पुत्री थी? 
                                                 <li class="list-group-item"><br/>A: ख्वाजा मोईनुद्दीन चिस्ती&nbsp;<input type="radio" value="A" onChange={this.dummyanswer} name="answer9"/></li>
 
-                                                <li class="list-group-item">B: -शम्स-उद-दिन इल्तुतमिश&nbsp;<input type="radio" value="B"onChange={this.dummyanswer} name="answer9"/></li>
+                                                <li class="list-group-item">B: शम्स-उद-दिन इल्तुतमिश&nbsp;<input type="radio" value="B"onChange={this.dummyanswer} name="answer9"/></li>
                                                 <li class="list-group-item">C: फखरुद्दीन अली अहमद&nbsp;<input type="radio" value="C"onChange={this.dummyanswer} name="answer9"/></li>
                                                 <br/>
                                                 <p><i class="fa fa-inr float-left" aria-hidden="true">12,50,000</i></p>
@@ -700,7 +785,7 @@ OPTI
 									<p class="lead text-center text-capitalize shadow-lg p-4 mb-4 bg-white">
 									<ul class="list-group">
                                                 10) चंडीगढ़ का रॉक गार्डन (शैल उद्यान) किसने बनाया था?
-                                                <li class="list-group-item"><br/>A: -नेकचंद्र&nbsp;<input type="radio" value="A" name="answer10" onChange={this.dummyanswer}/></li>
+                                                <li class="list-group-item"><br/>A: नेकचंद्र&nbsp;<input type="radio" value="A" name="answer10" onChange={this.dummyanswer}/></li>
 
                                                 <li class="list-group-item">B:  डॉ. राजेन्द्र प्रसाद&nbsp;<input type="radio" value="B" name="answer10"onChange={this.dummyanswer}/></li>
                                                 <li class="list-group-item">C: तेनजिंग नोर्गे&nbsp;<input type="radio" value="C" name="answer10" onChange={this.dummyanswer}/></li>
@@ -721,7 +806,7 @@ OPTI
                                                 <li class="list-group-item"><br/>A: अकबर द्वारा&nbsp;<input type="radio" value="A" onChange={this.dummyanswer} name="answer11"/></li>
 
                                                 <li class="list-group-item">B: मुग़ल द्वारा&nbsp;<input type="radio" value="B" onChange={this.dummyanswer} name="answer11"/></li>
-                                                <li class="list-group-item">C: -मराठो द्वारा&nbsp;<input type="radio" value="C"  onChange={this.dummyanswer} name="answer11"/></li>
+                                                <li class="list-group-item">C: मराठो द्वारा&nbsp;<input type="radio" value="C"  onChange={this.dummyanswer} name="answer11"/></li>
                                                 <br/>
                                                 <p><i class="fa fa-inr float-left" aria-hidden="true">50,00,000</i></p>
                                     </ul>
@@ -739,7 +824,7 @@ OPTI
                                                 12)Which British Formula 1 racing driver survived a Learjet crash in May 2000?
                                                 <li class="list-group-item"><br/>A: Stanley Ipkiss&nbsp;<input type="radio" value="A" onChange={this.dummyanswer} name="answer12"/></li>
 
-                                                <li class="list-group-item">B: -David Coulthard&nbsp;<input type="radio" value="B" onChange={this.dummyanswer} name="answer12"/></li>
+                                                <li class="list-group-item">B: David Coulthard&nbsp;<input type="radio" value="B" onChange={this.dummyanswer} name="answer12"/></li>
                                                 <li class="list-group-item">C: Carl Fogarty&nbsp;<input type="radio" value="C" onChange={this.dummyanswer} name="answer12"/></li>
                                                 <br/>
                                                 <p><i class="fa fa-inr float-left" aria-hidden="true">1 crore</i></p>
@@ -766,5 +851,48 @@ OPTI
 
 
 
-ReactDOM.render(<Darshit/>
+ReactDOM.render(
+	<Router>
+    <div>
+        <Route exact path="/" component={Darshit}/>
+        <Route exact path="/kk" component={Darshit}>
+        	<Darshit/>
+        </Route>
+        <Route exact path="/kk2" component={Darshit}>
+        	<Darshit/>
+        </Route>
+        <Route exact path="/kk3" component={Darshit}>
+        	<Darshit/>
+        </Route>
+        <Route exact path="/kk4" component={Darshit}>
+        	<Darshit/>
+        </Route>
+        <Route exact path="/kk5" component={Darshit}>
+        	<Darshit/>
+        </Route>
+        <Route exact path="/kk6" component={Darshit}>
+        	<Darshit/>
+        </Route>
+        <Route exact path="/kk7" component={Darshit}>
+        	<Darshit/>
+        </Route>
+        <Route exact path="/kk8" component={Darshit}>
+        	<Darshit/>
+        </Route>
+        <Route exact path="/kk9" component={Darshit}>
+        	<Darshit/>
+        </Route>
+        <Route exact path="/kk10" component={Darshit}>
+        	<Darshit/>
+        </Route>
+        <Route exact path="/kk11" component={Darshit}>
+        	<Darshit/>
+        </Route>
+        <Route exact path="/kk12" component={Darshit}>
+        	<Darshit/>
+        </Route>
+
+
+    </div>
+</Router>
 	,document.getElementById("root"))  
