@@ -98,7 +98,7 @@ dummyanswer(event)
 		dummyanswer:event.target.value
 	})
 }
-
+gajjar
 answer()
 {
 	var answerlkm=this.state.answers;
@@ -764,7 +764,7 @@ OPTI
 
 							<div class="container">
 								<div>
-									<p class="lead text-center text-capitalize shadow-lg p-4 mb-4 bg-white">
+								<p class="lead text-center text-capitalize shadow-lg p-4 mb-4 bg-white">
 									<ul class="list-group">
                                                 9) दिल्ली की सुल्तान रजिया सुल्तान किसकी पुत्री थी? 
                                                 <li class="list-group-item"><br/>A: ख्वाजा मोईनुद्दीन चिस्ती&nbsp;<input type="radio" value="A" onChange={this.dummyanswer} name="answer9"/></li>
