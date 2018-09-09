@@ -98,7 +98,6 @@ dummyanswer(event)
 		dummyanswer:event.target.value
 	})
 }
-gajjar
 answer()
 {
 	var answerlkm=this.state.answers;
